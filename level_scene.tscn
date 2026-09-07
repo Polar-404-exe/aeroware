@@ -1,10 +1,64 @@
 [gd_scene format=3 uid="uid://ps8ufhitsgby"]
 
+[ext_resource type="Texture2D" uid="uid://bgx3citrfbutk" path="res://374ccfeafea69644cb70b6f9ac585b84 (5).png" id="1_3mivm"]
+[ext_resource type="Texture2D" uid="uid://d1dtanm3qfh8f" path="res://vita1.png" id="2_lwxgr"]
+[ext_resource type="Texture2D" uid="uid://en8bjsph1krm" path="res://vita2.png" id="3_8wodn"]
+
 [node name="level_scene" type="Node2D" unique_id=653876691]
 
-[node name="Button" type="Button" parent="." unique_id=1876121610]
-offset_left = 473.0
-offset_top = 200.0
-offset_right = 785.0
-offset_bottom = 313.0
-text = "sei gay"
+[node name="level" type="RichTextLabel" parent="." unique_id=1629679248]
+clip_contents = false
+offset_left = 489.0
+offset_top = 228.0
+offset_right = 703.0
+offset_bottom = 318.0
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 64
+text = "Level#"
+
+[node name="Time" type="RichTextLabel" parent="." unique_id=808051929]
+clip_contents = false
+offset_left = 559.0
+offset_top = 332.0
+offset_right = 628.0
+offset_bottom = 390.0
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=698038450]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_3mivm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=240407159]
+offset_left = 219.0
+offset_top = 81.0
+offset_right = 956.0
+offset_bottom = 200.0
+
+[node name="Vita1" type="Sprite2D" parent="HBoxContainer" unique_id=412519701]
+position = Vector2(26.75, 70.56406)
+scale = Vector2(1.1822916, 1.1822916)
+texture = ExtResource("2_lwxgr")
+
+[node name="Vita2" type="Sprite2D" parent="HBoxContainer" unique_id=233817940]
+position = Vector2(162.75006, 67.56404)
+scale = Vector2(1.3978134, 1.3978134)
+texture = ExtResource("2_lwxgr")
+
+[node name="Vita3" type="Sprite2D" parent="HBoxContainer" unique_id=1034288498]
+position = Vector2(304.75006, 76.56404)
+scale = Vector2(1.3978134, 1.3978134)
+texture = ExtResource("2_lwxgr")
+
+[node name="Vita4" type="Sprite2D" parent="HBoxContainer" unique_id=510891309]
+position = Vector2(465.5418, 73.01715)
+scale = Vector2(1.6526232, 1.6526232)
+texture = ExtResource("2_lwxgr")
+
+[node name="Vita5" type="Sprite2D" parent="HBoxContainer" unique_id=2022917161]
+position = Vector2(649.75, 59.564133)
+rotation = 0.5235988
+scale = Vector2(2.1590028, 2.1590028)
+texture = ExtResource("3_8wodn")
