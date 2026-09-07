@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ps8ufhitsgby"]
+
+[node name="level_scene" type="Node2D" unique_id=653876691]
+
+[node name="Button" type="Button" parent="." unique_id=1876121610]
+offset_left = 473.0
+offset_top = 200.0
+offset_right = 785.0
+offset_bottom = 313.0
+text = "sei gay"

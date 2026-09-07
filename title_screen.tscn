@@ -1,10 +1,49 @@
 [gd_scene format=3 uid="uid://2abtcd2vscub"]
 
+[ext_resource type="Script" uid="uid://dnrob8ofa7uko" path="res://title_screen.gd" id="1_ak2if"]
 [ext_resource type="Texture2D" uid="uid://jipl2nro5h8" path="res://374ccfeafea69644cb70b6f9ac585b84 (4).png" id="1_v6p8y"]
 
 [node name="TitleScreen" type="Node2D" unique_id=849776291]
+script = ExtResource("1_ak2if")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1659699091]
+[node name="Background" type="TextureRect" parent="." unique_id=1659699091]
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_v6p8y")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=886647467]
+clip_contents = false
+offset_left = 324.0
+offset_top = 114.0
+offset_right = 851.0
+offset_bottom = 325.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 108
+text = "AeroWare"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=646646350]
+offset_left = 502.0
+offset_top = 265.0
+offset_right = 651.0
+offset_bottom = 405.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=353904109]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=372701796]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=391614384]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
