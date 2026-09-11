@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3wywqt12dba5"]
 
 [ext_resource type="Texture2D" uid="uid://dvyvu2onlghi8" path="res://player.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://covs4dtnlb4mm" path="res://player.gd" id="1_onrkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -57,17 +58,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7jngm"]
-radius = 71.00704
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n61g"]
+size = Vector2(90, 138)
 
 [node name="Player" type="CharacterBody2D" unique_id=1142258946]
+script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=201062808]
 sprite_frames = SubResource("SpriteFrames_ql8j3")
 animation = &"new_animation"
-frame = 5
-frame_progress = 0.23223402
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2050200406]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_7jngm")
+shape = SubResource("RectangleShape2D_2n61g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=896551909]
