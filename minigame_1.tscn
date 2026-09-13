@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cwybiql6sp5og"]
 
 [ext_resource type="PackedScene" uid="uid://d3wywqt12dba5" path="res://player.tscn" id="1_2n61g"]
+[ext_resource type="Script" uid="uid://cxj8mc3ng4w0w" path="res://minigame_1.gd" id="1_r6gmb"]
 [ext_resource type="Texture2D" uid="uid://en8bjsph1krm" path="res://vita2.png" id="2_gi7k6"]
 [ext_resource type="Script" uid="uid://bun0prdl4b546" path="res://points.gd" id="3_0hvi2"]
+[ext_resource type="PackedScene" uid="uid://bfs3yldbw6gds" path="res://node_2d.tscn" id="5_wh6qq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jngm"]
 size = Vector2(40, 40)
@@ -62,6 +64,7 @@ _data = {
 radius = 48.010414
 
 [node name="minigame_1" type="Node2D" unique_id=133769017]
+script = ExtResource("1_r6gmb")
 
 [node name="piattaforma" type="StaticBody2D" parent="." unique_id=377412790]
 position = Vector2(577.00006, 628)
@@ -130,6 +133,7 @@ scale = Vector2(0.9985398, 1.0187002)
 
 [node name="Points2" type="Node2D" parent="." unique_id=2110019054]
 position = Vector2(562, 265)
+script = ExtResource("3_0hvi2")
 
 [node name="Points2" type="TextureRect" parent="Points2" unique_id=1726566153]
 offset_left = -48.0
@@ -149,6 +153,7 @@ shape = SubResource("CircleShape2D_7jngm")
 
 [node name="Points3" type="Node2D" parent="." unique_id=1364845508]
 position = Vector2(187, 150)
+script = ExtResource("3_0hvi2")
 
 [node name="Points2" type="TextureRect" parent="Points3" unique_id=2120235780]
 offset_left = -48.0
@@ -184,5 +189,7 @@ libraries/ = SubResource("AnimationLibrary_0hvi2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Points/Area2D" unique_id=1132730019]
 shape = SubResource("CircleShape2D_7jngm")
+
+[node name="themed_timer" parent="." unique_id=1748849300 instance=ExtResource("5_wh6qq")]
 
 [connection signal="garlic_collected" from="Points" to="Points" method="_on_garlic_collected"]

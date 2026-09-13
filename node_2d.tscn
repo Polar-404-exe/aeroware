@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bh1etyjhm0umi" path="res://node_2d.gd" id="1_wtcfe"]
 
-[node name="Minigame" type="Node2D" unique_id=1748849300]
+[node name="themed_timer" type="Node2D" unique_id=1748849300]
 script = ExtResource("1_wtcfe")
 
-[node name="Timer" type="RichTextLabel" parent="." unique_id=879972944]
-offset_left = 364.0
-offset_top = 148.0
-offset_right = 570.0
-offset_bottom = 201.0
+[node name="timer" type="RichTextLabel" parent="." unique_id=879972944]
+offset_top = 2.0
+offset_right = 206.0
+offset_bottom = 55.0
