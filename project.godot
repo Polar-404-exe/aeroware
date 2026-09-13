@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://6wyrkaxpejw6"
+Kimi="*uid://clhrv0g7n1uin"
 
 [display]
 
