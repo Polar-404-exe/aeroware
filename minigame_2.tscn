@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://siu1eb46fhu8"]
+
+[ext_resource type="Script" uid="uid://055vsmibfgtq" path="res://minigame_2.gd" id="1_5x31c"]
+[ext_resource type="Texture2D" uid="uid://en8bjsph1krm" path="res://vita2.png" id="1_vdqgs"]
+[ext_resource type="Script" uid="uid://cgv3mawdrorx0" path="res://button.gd" id="2_5x31c"]
+[ext_resource type="PackedScene" uid="uid://bfs3yldbw6gds" path="res://node_2d.tscn" id="2_2425y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x31c"]
+size = Vector2(40, 40)
+
+[node name="minigame_2" type="Node2D" unique_id=2035924292]
+script = ExtResource("1_5x31c")
+
+[node name="themed_timer" parent="." unique_id=1748849300 instance=ExtResource("2_2425y")]
+position = Vector2(-6.1035156e-05, 0)
+
+[node name="piattaforma" type="StaticBody2D" parent="." unique_id=1704002565]
+position = Vector2(577.00006, 628)
+scale = Vector2(28.800003, 1)
+
+[node name="ColorRect" type="ColorRect" parent="piattaforma" unique_id=268851471]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.69614536, 0.93629724, 0.6820156, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piattaforma" unique_id=815066895]
+shape = SubResource("RectangleShape2D_5x31c")
+
+[node name="sfondo" type="TextureRect" parent="piattaforma" unique_id=2030627386]
+offset_left = -19.999998
+offset_top = -628.0
+offset_right = 20.000002
+offset_bottom = -588.0
+scale = Vector2(1.0058705, 16.433098)
+
+[node name="Button_1" type="Button" parent="." unique_id=2116798455]
+offset_left = 176.0
+offset_top = 373.0
+offset_right = 280.0
+offset_bottom = 477.0
+icon = ExtResource("1_vdqgs")
+flat = true
+script = ExtResource("2_5x31c")
+
+[node name="Button_2" type="Button" parent="." unique_id=1703385839]
+offset_left = 813.0
+offset_top = 371.0
+offset_right = 917.0
+offset_bottom = 475.0
+icon = ExtResource("1_vdqgs")
+flat = true
+script = ExtResource("2_5x31c")
+
+[node name="Button_3" type="Button" parent="." unique_id=1129605768]
+offset_left = 376.0
+offset_top = 180.0
+offset_right = 480.0
+offset_bottom = 284.0
+icon = ExtResource("1_vdqgs")
+flat = true
+script = ExtResource("2_5x31c")
+
+[node name="Button_4" type="Button" parent="." unique_id=1195761187]
+offset_left = 703.0
+offset_top = 141.0
+offset_right = 807.0
+offset_bottom = 245.0
+icon = ExtResource("1_vdqgs")
+flat = true
+script = ExtResource("2_5x31c")
+
+[connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
+[connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
+[connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]
+[connection signal="pressed" from="Button_4" to="Button_4" method="_on_pressed"]

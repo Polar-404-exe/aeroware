@@ -1,12 +1,15 @@
 extends Node
 
-var minigames_done = 0 #track how many minigames done
-var lives = 5 #track how many lives left, also effecting garlic appearing
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var minigames_done = 0 #Numero di minigiochi fatti
+var lives = 5 #vite
+#minigiochi
+var lista_minigiochi : Array = [
+	"res://minigame_1.tscn",
+	"res://minigame_2.tscn",
+]
+# Prossimo gioco a random
+func prossimo_gioco():
+	# gioco a random
+	var indice_a_caso = randi() % lista_minigiochi.size()
+	var gioco_scelto = lista_minigiochi[indice_a_caso]
+	get_tree().change_scene_to_file(gioco_scelto)
