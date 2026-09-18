@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b3biaxh5c31nu"]
+
+[ext_resource type="Script" uid="uid://t0xosag7o5vy" path="res://timer_screen.gd" id="1_xna03"]
+[ext_resource type="Texture2D" uid="uid://bgx3citrfbutk" path="res://374ccfeafea69644cb70b6f9ac585b84 (5).png" id="2_0bi17"]
+[ext_resource type="Texture2D" uid="uid://d1dtanm3qfh8f" path="res://vita1.png" id="3_bseyb"]
+
+[node name="level_scene" type="Node2D" unique_id=653876691]
+script = ExtResource("1_xna03")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=698038450]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_0bi17")
+
+[node name="HealtContainer" type="HBoxContainer" parent="." unique_id=240407159]
+offset_left = 273.0
+offset_top = 95.0
+offset_right = 773.0
+offset_bottom = 214.0
+scale = Vector2(1.2400012, 1)
+
+[node name="Vita" type="TextureRect" parent="HealtContainer" unique_id=700391219]
+layout_mode = 2
+texture = ExtResource("3_bseyb")
+
+[node name="Vita2" type="TextureRect" parent="HealtContainer" unique_id=1306989850]
+layout_mode = 2
+texture = ExtResource("3_bseyb")
+
+[node name="Vita3" type="TextureRect" parent="HealtContainer" unique_id=130780622]
+layout_mode = 2
+texture = ExtResource("3_bseyb")
+
+[node name="Vita4" type="TextureRect" parent="HealtContainer" unique_id=870986624]
+layout_mode = 2
+texture = ExtResource("3_bseyb")
+
+[node name="Vita5" type="TextureRect" parent="HealtContainer" unique_id=1146602466]
+layout_mode = 2
+texture = ExtResource("3_bseyb")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1569948150]
+offset_left = 527.00006
+offset_top = 256.0
+offset_right = 731.00006
+offset_bottom = 375.0
+scale = Vector2(1.0000013, 0.91999996)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=625321113]
+offset_left = 572.0
+offset_top = 345.0
+offset_right = 776.00006
+offset_bottom = 464.0
+scale = Vector2(0.75999886, 0.64)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"

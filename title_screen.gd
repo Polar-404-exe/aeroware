@@ -15,5 +15,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://level_scene.tscn")
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")
