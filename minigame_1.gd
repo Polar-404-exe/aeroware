@@ -1,37 +1,39 @@
 extends Node2D
-@onready var themed_timer: Node2D = $themed_timer 
-# ^^^ You dragged this in the scene by the way 
 
+@onready var themed_timer: Node2D = $themed_timer
 
-
-var garlic_collected = 0 # just keeping track of garlic collected
-var timer_end = false # boolean (true or false) stating whether the timer ended
+var garlic_collected := 0
+var finished := false
+var start_ms := 0
 
 func _ready() -> void:
+	start_ms = Time.get_ticks_msec()
+	await themed_timer.Timer(10.0)
+	if not finished:
+		lose()
 
-		#Below you can see that I have a function that I named. I grab a 
-		#function from it that was created in it's script and use `await` to 
-		# tell the script to wait for a signal, or for when a function finshes
+func garlic_collect() -> void:
+	garlic_collected += 1
+	print("aglio preso: ", garlic_collected)
 
+func _process(_delta: float) -> void:
+	if garlic_collected >= 3 and not finished:
+		win()
 
-	await themed_timer.Timer(10.0) #accessing a function from this node
-	#after this is compeleted...
-	timer_end = true # now we're saying "oh ye you ran out of time"
+# TEST TEMPORANEO: premi F1 per vincere subito. Cancellalo dopo.
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_F1 and not finished:
+		print("vittoria forzata")
+		win()
 
-func _process(delta: float) -> void: # running every frame brochacho
-	
-	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
-		if Global.minigames_done > 3: # we access a global script and see how many minigames have been compeleted
-			get_tree().change_scene_to_file("res://scenes/done_screen.tscn") # change current play scene into another, but you make your own finish screen in a later challenge, dont worry abt this rn
-		else:
-			get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # go back to the intermission scene
-	
-	if timer_end: # if the timer does end...
-		Global.minigames_done -=1 #go back a minigame
-		Global.lives -= 1 # lose ur lives
-		get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # back to intermission
-		
+func win() -> void:
+	finished = true
+	print("VINTO")
+	get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")
 
-func garlic_collect() -> void: # cool function that you connect to those garlics
-	garlic_collected = garlic_collected +1
-	return
+func lose() -> void:
+	finished = true
+	print("PERSO dopo %.1f s, aglio = %d" % [(Time.get_ticks_msec() - start_ms) / 1000.0, garlic_collected])
+	Global.minigames_done -= 1
+	Global.lives -= 1
+	get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")
